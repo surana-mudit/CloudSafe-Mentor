@@ -1,0 +1,203 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - greetings
+    - howdy
+    - hi there
+    - what's up
+    - good afternoon
+    - yo
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - see ya
+    - take care
+    - catch you later
+    - until next time
+    - bye bye
+    - have a nice day
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - absolutely
+    - definitely
+    - yeah
+    - that's right
+    - that helps
+    - that's helpful
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - not at all
+    - that doesn't help
+    - I need more information
+    - that's not clear
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what are you?
+    - who am I talking to?
+    - are you an AI?
+    - are you a real person?
+- intent: ask_definition
+  examples: |
+    - What is [IAM](security_concept)?
+    - Can you explain [MFA](security_concept)?
+    - Define [encryption](security_concept)
+    - What does [IAM](security_concept) stand for?
+    - Tell me about [principle of least privilege](security_concept)
+    - I need to understand [Shared Responsibility Model](security_concept)
+    - What's a [Virtual Private Cloud](security_concept)?
+    - Explain [CSPM](security_concept) in simple terms
+    - What is a [security group](security_concept) in cloud?
+    - I don't know what [DDoS](security_concept) means
+- intent: request_tips
+  examples: |
+    - How can I secure my [AWS](cloud_provider) account?
+    - What are best practices for [cloud security](security_concept)?
+    - Give me tips for protecting data in the cloud
+    - How should I implement [MFA](security_concept)?
+    - What's the best way to secure [S3 buckets](security_concept)?
+    - Security recommendations for [Azure](cloud_provider)
+    - How to implement least privilege in [GCP](cloud_provider)?
+    - What are the best security practices for [VPC](security_concept)?
+    - How to protect API endpoints in the cloud?
+    - Tips for secure cloud data storage
+- intent: start_quiz
+  examples: |
+    - I want to take a quiz
+    - Test my cloud security knowledge
+    - Give me a quiz about cloud security
+    - Start a security quiz
+    - Can we do a quiz on [AWS](cloud_provider) security?
+    - Quiz me on cloud concepts
+    - I'd like to test what I know
+    - Let's start a quiz session
+    - Begin assessment of my knowledge
+    - Challenge me with security questions
+- intent: answer_quiz
+  examples: |
+    - The answer is A
+    - I choose option B
+    - My answer is C
+    - Option D
+    - I think it's B
+    - The correct answer is A
+    - I'll go with option C
+    - The solution is D
+    - I select B
+    - My final answer is A
+- intent: ask_service_info
+  examples: |
+    - Tell me about [AWS Shield](service)
+    - How does [Azure Sentinel](service) work?
+    - What is [Google Cloud Armor](service)?
+    - Explain [AWS CloudTrail](service)
+    - What's the purpose of [Azure Key Vault](service)?
+    - How can I use [Security Command Center](service)?
+    - What are [AWS S3 bucket policies](service)?
+    - Tell me about [Azure Security Center](service)
+    - What does [Google Identity-Aware Proxy](service) do?
+    - How does [AWS KMS](service) help with security?
+    - tell me about SSH
+- intent: compare_cloud_providers
+  examples: |
+    - Compare security in [AWS](cloud_provider) vs [Azure](cloud_provider)
+    - How does [GCP](cloud_provider) security differ from [AWS](cloud_provider)?
+    - Which is more secure, [Azure](cloud_provider) or [GCP](cloud_provider)?
+    - Differences between [AWS](cloud_provider) and [Azure](cloud_provider) security features
+    - Security comparison of cloud providers
+    - [AWS](cloud_provider) or [GCP](cloud_provider) for better security?
+    - How do security services compare between [Azure](cloud_provider) and [AWS](cloud_provider)?
+    - Which provider has better encryption options?
+    - [GCP](cloud_provider) vs [Azure](cloud_provider) security tools
+    - Cloud provider security comparison
+- intent: ask_compliance
+  examples: |
+    - Tell me about cloud compliance
+    - What is [CSA STAR](compliance_framework)?
+    - How to ensure [GDPR](compliance_framework) compliance in the cloud?
+    - Cloud security standards to follow
+    - What is the [Cloud Controls Matrix](compliance_framework)?
+    - [HIPAA](compliance_framework) compliance in [AWS](cloud_provider)
+    - How does [Azure](cloud_provider) help with compliance?
+    - What compliance certificates should I look for?
+    - Explain [SOC 2](compliance_framework) for cloud services
+    - How to audit cloud security compliance?
+- lookup: security_concept
+  examples: |
+    - IAM
+    - MFA
+    - encryption
+    - principle of least privilege
+    - Shared Responsibility Model
+    - Virtual Private Cloud
+    - CSPM
+    - security group
+    - DDoS
+    - TLS/SSL
+    - Zero Trust
+    - SIEM
+    - patching
+    - CWPP
+    - WAF
+    - KMS
+- lookup: cloud_provider
+  examples: |
+    - AWS
+    - Azure
+    - GCP
+    - Google Cloud
+    - Microsoft Azure
+    - Amazon Web Services
+- lookup: service
+  examples: |
+    - AWS Shield
+    - Azure Sentinel
+    - Google Cloud Armor
+    - AWS CloudTrail
+    - Azure Key Vault
+    - Security Command Center
+    - AWS S3 bucket policies
+    - Azure Security Center
+    - Google Identity-Aware Proxy
+    - AWS KMS
+    - GCP VPC Service Controls
+    - Azure Active Directory
+- lookup: compliance_framework
+  examples: |
+    - CSA STAR
+    - GDPR
+    - Cloud Controls Matrix
+    - HIPAA
+    - SOC 2
+    - PCI DSS
+    - ISO 27001
+    - CCPA
+    - FedRAMP
+    - NIST

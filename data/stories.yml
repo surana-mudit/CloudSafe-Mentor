@@ -1,0 +1,158 @@
+version: "3.1"
+
+stories:
+
+# Cloud security related stories
+
+- story: ask for definition
+  steps:
+  - intent: ask_definition
+  - action: utter_provide_definition
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: ask for definition and follow up
+  steps:
+  - intent: ask_definition
+  - action: utter_provide_definition
+  - action: utter_ask_if_helpful
+  - intent: deny
+  - action: utter_provide_more_details
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: request security tips
+  steps:
+  - intent: request_tips
+  - action: utter_provide_tips
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: ask for service information
+  steps:
+  - intent: ask_service_info
+  - action: utter_service_info
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: compare cloud providers
+  steps:
+  - intent: compare_cloud_providers
+  - action: utter_compare_providers
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: ask about compliance
+  steps:
+  - intent: ask_compliance
+  - action: utter_compliance_info
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: complete quiz flow
+  steps:
+  - intent: start_quiz
+  - action: utter_start_quiz
+  - action: action_ask_question
+  - intent: answer_quiz
+  - action: action_validate_answer
+  - action: action_ask_next_question
+  - intent: answer_quiz
+  - action: action_validate_answer
+  - action: action_quiz_results
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: abort quiz flow
+  steps:
+  - intent: start_quiz
+  - action: utter_start_quiz
+  - action: action_ask_question
+  - intent: answer_quiz
+  - action: action_validate_answer
+  - action: action_ask_next_question
+  - intent: deny
+  - action: utter_end_quiz
+  - action: utter_goodbye
+
+- story: greet and ask definition
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_definition
+  - action: utter_provide_definition
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: greet and request tips
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_tips
+  - action: utter_provide_tips
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: definition then related tips
+  steps:
+  - intent: ask_definition
+  - action: utter_provide_definition
+  - action: action_listen
+  - intent: request_tips
+  - action: utter_provide_tips
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: definition to compliance question
+  steps:
+  - intent: ask_definition
+  - action: utter_provide_definition
+  - action: action_listen
+  - intent: ask_compliance
+  - action: utter_compliance_info
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: service info then compare providers
+  steps:
+  - intent: ask_service_info
+  - action: utter_service_info
+  - action: action_listen
+  - intent: compare_cloud_providers
+  - action: utter_compare_providers
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: check if bot can help with cloud security
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_definition
+  - action: utter_provide_definition
+  - action: utter_ask_if_helpful
+  - intent: affirm
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: nlu_fallback
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_service_info
+  - action: utter_service_info
